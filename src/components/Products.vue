@@ -20,7 +20,7 @@
 </template>
 <script>
 import store from "@/store";
-import { actions as ac } from '@/store/constants/products';
+import { actions as ac } from '@/store/constants/cart';
 import Product from "@/components/Product.vue"
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
@@ -29,7 +29,7 @@ import Login from "@/components/Login.vue";
 export default {
     name: 'store-products',
     async mounted(){
-        await store.dispatch(ac.FETCH_PRODUCTS);
+        await store.dispatch(ac.FETCH_CART);
     },
     computed: {
         isLoading(){

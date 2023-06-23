@@ -2,9 +2,9 @@ import axios from 'axios';
 
 
 export default {
-    userLogin: async function (params) {
+    getCartItems: async function () {
         try{
-            return await axios.post('https://fakestoreapi.com/auth/login', params)
+            return await axios.get('https://fakestoreapi.com/carts/1')
         } catch (error) {
             throw new Error(error);
         }

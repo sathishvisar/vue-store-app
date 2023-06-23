@@ -7,7 +7,7 @@
         <div class="details">
             <ul>
                 <li><span class="label">Price:</span>{{ product.price }}</li>
-                <li><span class="label">Category:</span>{{ product.category }}</li>
+                <li><span class="label">Category:</span><span class="category">{{ product.category }}</span></li>
                 <li><span class="label">Rating:</span>{{ product.rating.rate }} | {{ product.rating.count }}</li>
             </ul>
         </div>
@@ -68,6 +68,9 @@ export default {
                 li {
                     list-style: none;
                     font-size: 14px;
+                    .label {
+                        margin-right: 5px;
+                    }
                 }
             }
         }
