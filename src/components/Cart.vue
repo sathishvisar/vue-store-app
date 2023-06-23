@@ -2,11 +2,13 @@
     <div>
       <Header />
 
-      <ul class="cart-items" v-if="products && products.length">
-        <li v-for="item in cartItems" :key="item.productId">
-           {{cartItem(item.productId).title}} - {{item.quantity}}
-        </li>
-      </ul>
+      <b-container fluid="sm" v-if="!isLoading">
+        <ul class="cart-items" v-if="products && products.length">
+          <li v-for="item in cartItems" :key="item.productId">
+            {{cartItem(item.productId).title}} <span class="count">{{item.quantity}}</span>
+          </li>
+        </ul>
+      </b-container>
 
       <Footer />
       <Login />
@@ -56,11 +58,17 @@ export default {
 
 <style lang="stylus" scoped>
 .cart-items {
-    
+
     li {
       list-style : none;
       padding: 1.2rem 0.8rem;
       border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      place-content: center space-between;
+      align-items: center;
+      .count {
+
+      }
     }
 }   
 </style>
