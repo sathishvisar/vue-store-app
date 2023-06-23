@@ -3,11 +3,12 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-// import login from './modules/login';
+import login from '@/store/modules/login';
 import products from '@/store/modules/products';
 
 export default new Vuex.Store({
   modules: {
+    login,
     products
   }
 });

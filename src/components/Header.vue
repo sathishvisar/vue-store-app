@@ -1,10 +1,12 @@
 <template>
   <header class="header" :class="{ 'sticky': isSticky }">
-    <!-- Header content -->
+      <Checkout :place='"header"' />
   </header>
 </template>
 
 <script>
+import Checkout from "@/components/Checkout.vue";
+
 export default {
   name: 'store-header',
   data() {
@@ -22,14 +24,22 @@ export default {
         handleScroll() {
             this.isSticky = window.pageYOffset > 100;
         }
+    },
+    components: {
+      Checkout
     }
 }
 </script>
 <style lang="stylus" scoped>
 .header {
-    background: #0259AB 0% 0% no-repeat padding-box;
-    height: 60px;
+    height: 72px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     margin-bottom: 50px;
+    display: flex;
+    place-content: flex-end;
+    align-items: center;
 
     &.sticky {
         position: fixed;

@@ -15,8 +15,8 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 const routes = [
-  { path: '/', component: () => import("@/components/Products"), },
-  { path: '/cart', component: () => import("@/components/Cart"), }
+  { path: '/', name: 'products', component: () => import("@/components/Products"), },
+  { path: '/cart', name: 'cart', component: () => import("@/components/Cart"), }
 ];
 
 const router = new Router({

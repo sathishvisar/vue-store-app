@@ -1,17 +1,21 @@
 <template>
 
-   <div>
+   <div class="products-container">
         <Header />
         <b-container fluid="sm" v-if="!isLoading">
             <b-row>
-                <b-col col xs="12" sm="4" md="3" lg="2" v-for="product in products" :key="product.id">
+                <b-col col xs="12" sm="4" md="4" lg="3" v-for="product in products" :key="product.id">
                     <Product :product="product" />
                 </b-col>
             </b-row>
         </b-container>
-        <p v-if="isLoading">Loading...</p>
+        <p v-if="isLoading" class="loading">
+            <b-spinner variant="primary"></b-spinner>
+        </p>
+        
         <p v-if="error">{{ error }}</p>
         <Footer />
+        <Login />
    </div>
 </template>
 <script>
@@ -20,6 +24,7 @@ import { actions as ac } from '@/store/constants/products';
 import Product from "@/components/Product.vue"
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Login from "@/components/Login.vue";
 
 export default {
     name: 'store-products',
@@ -40,7 +45,13 @@ export default {
     components: {
         Product,
         Header,
-        Footer
+        Footer,
+        Login
     }
 }
 </script>
+<style lang="stylus" scoped>
+.products-container {
+    background: #fafafa
+}   
+</style>
