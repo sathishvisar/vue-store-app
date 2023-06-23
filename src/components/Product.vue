@@ -8,7 +8,7 @@
             <ul>
                 <li><span class="label">Price:</span>{{ product.price }}</li>
                 <li><span class="label">Category:</span><span class="category">{{ product.category }}</span></li>
-                <li><span class="label">Rating:</span>{{ product.rating.rate }} | {{ product.rating.count }}</li>
+                <li style="display: flex;"><span class="label">Rating:</span><star-rating :read-only="true" v-model="rating" :star-size="15" :increment="0.5"></star-rating> | {{ product.rating.count }}</li>
             </ul>
         </div>
         <div class="action">
@@ -18,14 +18,21 @@
 </template>
 <script>
 import AddToCart from "@/components/AddToCart.vue";
+import StarRating from 'vue-star-rating';
 
 export default {
   name: 'store-product',
+  data() {
+    return {
+      rating: this.product.rating.rate || 0
+    };
+  },
   props:{
     product: Object
   },
   components:{
-    AddToCart
+    AddToCart,
+    StarRating
   }
 }
 </script>
