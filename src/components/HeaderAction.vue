@@ -4,7 +4,7 @@
         <template v-else>
           <b-button v-if="this.$route.name === 'products'" class="btn btnCart" variant="outline-primary" @click="goToCart">Cart</b-button>
           <b-button v-if="this.$route.name === 'cart'" class="btn btnCart" variant="outline-primary" @click="goToProducts">Products</b-button>
-          <b-button class="btn btnLogout" variant="outline-primary" v-if="position === 'header'" @click="logOut">Logout</b-button>
+          <b-button class="btn btnLogout" variant="link" v-if="position === 'header'" @click="logOut"><BoxArrowRightIcon /></b-button>
         </template>
     </div>
 </template>
@@ -13,6 +13,7 @@
 import store from "@/store";
 import { mapGetters } from 'vuex';
 import { actions as ac } from '@/store/constants/login';
+import BoxArrowRightIcon from "@/components/icons/BoxArrowRightIcon"
 
 export default {
   name: 'store-login',
@@ -44,7 +45,11 @@ export default {
     },
     async logOut() {
       await store.dispatch(ac.USER_LOGOUT)
+      this.goToProducts()
     }
+  },
+  components: {
+    BoxArrowRightIcon
   }
 }
 </script>

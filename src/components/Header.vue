@@ -1,11 +1,11 @@
 <template>
   <header class="header" :class="{ 'sticky': isSticky }">
-      <Checkout :place='"header"' />
+      <HeaderAction :place='"header"' />
   </header>
 </template>
 
 <script>
-import Checkout from "@/components/Checkout.vue";
+import HeaderAction from "@/components/HeaderAction.vue";
 
 export default {
   name: 'store-header',
@@ -26,7 +26,7 @@ export default {
         }
     },
     components: {
-      Checkout
+      HeaderAction
     }
 }
 </script>

@@ -43,8 +43,5 @@ export default {
     .close{
         margin-right: 10px;
     }
-    .login {
-
-    }
 }
 </style>

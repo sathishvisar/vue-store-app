@@ -5,9 +5,13 @@
 </template>
 
 <script>
-
+import { actions as ac } from '@/store/constants/products';
+import store from "@/store";
 export default {
-  name: 'App'
+  name: 'App',
+  async mounted(){
+    await store.dispatch(ac.FETCH_PRODUCTS);
+  },
 }
 </script>
 

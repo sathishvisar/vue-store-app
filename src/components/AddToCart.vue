@@ -1,17 +1,19 @@
 <template>
-    <b-button class="btn btnCart" variant="outline-primary" @click="addToCart">Add to Cart</b-button>
+  <b-button class="btn btnCart" variant="outline-primary" @click="addToCart"
+    >Add to Cart</b-button
+  >
 </template>
 
 <script>
 export default {
-  name: 'store-add-to-cart',
-  props:{
-    product: Object
+  name: "store-add-to-cart",
+  props: {
+    product: Object,
   },
   methods: {
     addToCart() {
-        console.log(this.product)
-    }
-  }
-}
+      console.log(this.product);
+    },
+  },
+};
 </script>
