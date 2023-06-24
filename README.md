@@ -30,5 +30,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ![alt text](https://github.com/sathishvisar/vue-store-app/blob/master/screenshot_1.png?raw=true)
 
 ###### Store Login
-![alt text](https://github.com/sathishvisar/vue-store-app/blob/master/screenshot_2.png?raw=true)
+![alt text](https://github.com/sathishvisar/vue-store-app/blob/master/screenshot_2.jpeg?raw=true)
 
