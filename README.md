@@ -1,4 +1,4 @@
-# app
+## app
 
 ### Project setup
 ```
@@ -22,7 +22,8 @@ npm run lint
 
 ###### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-store-app
+
+## vue-store-app
 
 
 ###### Store Products List
